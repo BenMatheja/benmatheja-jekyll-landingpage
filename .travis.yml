@@ -1,33 +1,36 @@
 language: ruby
 rvm:
-  - 2.2.2
-
+- 2.2.2
 before_script:
- - chmod +x ./script/cibuild # or do this locally and commit
-
-# Assume bundler is being used, therefore
-# the `install` step will run `bundle install` by default.
-script: ./script/cibuild
-
-# branch whitelist, only for GitHub Pages
-#branches:
-#  only:
-#  - gh-pages     # test the gh-pages branch
-#  - /pages-(.*)/ # test every branch which starts with "pages-"
-
+- chmod +x ./script/cibuild
+script: "./script/cibuild"
 env:
   global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
-
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - secure: DB7pfQltxLLT9SgSlEN+stnSpeOsncR2AQI3EjSk8Y+SJ/7kHSCGPV0pU6laLBabUcL0T0ymQ6PhPpPE/pi856h5tIxCmbtBX/jOP3nhH9OXMtVLf+MGaT2PXjE0QTdzSGSinrL4o8GZfQ2/I4XOHT+BX9H0pgVqJQj+jeTRbKcKFvdVe7/KrSNIw0u06+jYIla4udwFJZO3mU/FRUntSnp+RaBkiT++k9YNBVrN+M1IkliEGVuHqVPxR0Kc73gT5NXK/ipDrVUDBP5OmwMDxhdzjO4V4BYl55AWYMraM2JLPUz5ii+1BYt9EUG0RQSpOd0wFvx31QEROR0gOoCQoZydm1HCJaXtnJ3UYcrdmsD7Q8p9gq74N1/0znQ+nZcG5rH5akuOshv3S3aVeWPSgondofwtT+8AAzlsOtevRDtW4DvrYuv+y7r6q87WR+pjJfta3GHOPkfs+U9La9Zd0SXN+ZXzXV6YH+zK++fXOZUFOwbqLktB8LycQLL80mczyyR7gmq7qES6zqSpf0eBd/wqBTV+jQbtQBHBIKzQ5F2xu8WB4Aw55uNBKOLL3nOdT42fjwIcMIfyZBe9JfaDQ8KQZoNS47Xa3uv0ozP1cLGKLVmTkmHMFmlsXbieX4wFGjOZNOW4XUbce6WKV9h/uTy0sEVWQgxzDRRZPLdXAiU=
+  - secure: dOhABamyfrZCf27fI5eudgM2t3VqWTnl0H4hrczzCPwZzqxe+MJTnpXaSdJMSuWS/3ZGjOezGkb7mlVY9bxTgupLz8QGMWrWYIzeFftQ0Vt+uz0hvJx8zjWheX6f2RVgivXOLZmW2cMrwEkWJ6e24yl9EW7+sF+6oOk+hPtu74keYOiAaZVb+prsQJ4cDgTr4cH7OaQx7cYT7cd0Q2RwQgLZV1Vkbv3IQXJ1/zOSEWSXeu/dEvWjs3VxLQO0G61+DNioAXrdPJbiIaR7YGQdaUAEWRwlt3qn5ZIL0mBuUKv1C0d7nnLb01cISTseNdjS0ZUeMXgenEZLe/uiB8Dh3O1+3DdyFUjEzWQqDNE2JfZQ3YDFX85SH6Ufl2cCZdwVHO+f6svsqUYvZhUg1B1/1ZqzDPcQ5iy6RTxlHf4/h+io+vEvogrCbGaqYKRMKdJLtfNgifPQPQe+lEomIRfrTJ+XxvvH50PLlsnAlkeOOHLJkK22aLnBGYK9EnIBshCAEXnbcK2hQK1+LRtIBX1D8dn5dXaoNwQpXwofoMQ0EIaedUQUtTj04qbdH+2o2pvSQz0cRqUCihdk6Da+8jvl99sA32kQQ4BernZBUm9QRlNpqac+sDAL3cYU/LI9FpuMYM3K9LjNxiwzJ2unB5jF9WQ1Lmqv/Dt2fVk5MI+YgFY=
+  - secure: USxK6sHOi9eyap6r7wExQEchMOSltfUdwNpg/ftjGpIX7UJNcnd7q2SBi/JFZ3eJ5Nk1vF32CnHoOyYgNDgLpcxhtq+nEG6Cwg2CcgWEhyvLQTMmdqUGWHRxOwH7FDIsLC8NqL6poP5rKsPSaMlj20BcpIGuhKmxyXFFF2slxWxEL3d+0tlxn0lHlWvmVF6MSfQnNusKc8VGFsICqcGh6lxBL+ak3rPFzRLvpn0lzVHOna9pzMFOJsnHB2GxvDOTn8vqnbfgnzaCaPuATRyvwtEO//4FeVKvxcgTIwfoN9I3z4FLGxeF4qVv3JdUuZPk325rbJpPpOntyOXYAhEDLMUQNexUhGYsgjlz6r0EjGgNtkKDj/ARBFvQ5yMcisv3dch/20Fr/0BYUJnRTrKXnA9iyHf5MzvgSd56qtG0+4AIOWN7oTXcgC36gjSGOd4N3ivX2+hgqsrxerfACbxy0aER+e4AA06ZkAVNuLyzRDtkwhlH5mD8Aj7BRbhejCyDZygtqcFudvcm1ET6c6TDfoDaNNC+zqkKuKzJTeNGY1koWECp8KrcsXiS0bHYkX4qGso6Z79OcDZyEZBl1dMOEjUpppBGxGd3Uibp+igy/aJYVs3zBSFjV5/9Lg8ov/pvg8zufOP33AFVb3JilEqsTehalgg+ZwO1hh/yPIghdIk=
 addons:
   apt:
     packages:
     - libcurl4-openssl-dev
-
-sudo: false # route your build to the container-based infrastructure for a faster build
-
-cache: bundler # caching bundler gem packages will speed up build
-
-# Optional: disable email notifications about the outcome of your builds
+sudo: false
+cache: bundler
 notifications:
   email: true
+before_install:
+- openssl aes-256-cbc -K $encrypted_fca4ebe68149_key -iv $encrypted_fca4ebe68149_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
+before_deploy:
+- openssl aes-256-cbc -K $encrypted_<...>_key -iv $encrypted_<...>_iv -in deploy_rsa.enc
+  -out /tmp/deploy_rsa -d
+- eval "$(ssh-agent -s)"
+- chmod 600 /tmp/deploy\_rsa
+- ssh-add /tmp/deploy\_rsa
+- echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: rsync -r --quiet --delete-after _site/* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_DIRECTORY
+  on:
+    branch: master
