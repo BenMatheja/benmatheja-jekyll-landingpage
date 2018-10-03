@@ -22,8 +22,6 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_fca4ebe68149_key -iv $encrypted_fca4ebe68149_iv
   -in deploy_rsa.enc -out deploy_rsa -d
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_<...>_key -iv $encrypted_<...>_iv -in deploy_rsa.enc
-  -out /tmp/deploy_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/deploy\_rsa
 - ssh-add /tmp/deploy\_rsa
