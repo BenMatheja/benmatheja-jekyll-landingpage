@@ -1,8 +1,14 @@
 # Site settings
 name: Ben Matheja
 description: "Information Systems Engineer"
-url: ""
+url: "https://benmatheja.de"
 
+# Build settings
+sass:
+  style: compressed
+markdown: kramdown
+permalink: pretty
+exclude: [vendor]
 
 # Delete the lines you don't need
 # about 5 elements are recomended
@@ -32,7 +38,5 @@ favicon_img_path: "imgs/favicon.ico"
 #favicon_img_path: "https://external.url/favicon.ico"
 
 
-# Build settings
-markdown: kramdown
-permalink: pretty
-exclude: [vendor]
+
+
